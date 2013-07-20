@@ -1,6 +1,6 @@
 <template name="showRoom">
   {{#if loggingIn}}
-
+    {{> spinner}}
   {{else}}
     {{#if currentUser}}
       <section id="messages">
