@@ -23,5 +23,14 @@ Template.roomSidebar.events({
 
       Messages.update(message._id, {$set: changes})
     })
+  },
+
+  'click #close-room': function(event) {
+    event.preventDefault()
+
+    Meteor.call('closeRoom', Session.get("currentRoomId"), function(error) {
+      if (!error)
+        Meteor.Router.to('home')
+    })
   }
 })
