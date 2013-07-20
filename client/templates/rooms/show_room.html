@@ -1,0 +1,12 @@
+<template name="showRoom">
+  <h1>Welcome to the room</h1>
+
+  {{#each messages}}
+    <p>{{body}}</p>
+  {{/each}}
+
+  <form>
+    <textarea></textarea>
+    <button type="submit">Post</button>
+  </form>
+</template>

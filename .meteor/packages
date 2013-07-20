@@ -6,3 +6,6 @@
 autopublish
 insecure
 preserve-inputs
+router
+accounts-ui
+accounts-password
