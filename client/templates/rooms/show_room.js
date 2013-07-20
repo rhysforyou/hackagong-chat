@@ -18,7 +18,8 @@ Template.showRoom.events({
     }
 
     Meteor.call('message', message, function(error, response) {
-      console.log(response)
+      if (!error)
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
     })
 
     $(event.target).find("textarea").val('')
