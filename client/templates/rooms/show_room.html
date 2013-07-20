@@ -10,14 +10,7 @@
 
     </aside>
 
-    <footer id="message-bar">
-      <div class="container">
-        <form id="new-message">
-          <textarea></textarea>
-          <button type="submit">Post</button>
-        </form>
-      </div>
-    </footer>
+    {{> messageCompose}}
   {{else}}
     <p>Before we start we'll need your name:</p>
     <form id="anon-user">

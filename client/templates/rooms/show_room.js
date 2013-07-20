@@ -8,22 +8,6 @@ Template.showRoom.helpers({
 })
 
 Template.showRoom.events({
-  'submit form#new-message': function(event) {
-    event.preventDefault()
-
-    var body = $(event.target).find("textarea").val()
-    var message = {
-      body: body,
-      roomId: Session.get("currentRoomId")
-    }
-
-    Meteor.call('message', message, function(error, response) {
-      if (!error)
-        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-    })
-
-    $(event.target).find("textarea").val('')
-  },
   'submit form#anon-user': function(event) {
     event.preventDefault()
     var nickname = $(event.target).find("#name").val()
