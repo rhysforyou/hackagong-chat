@@ -12,7 +12,7 @@ Meteor.methods({
 
     message = _.extend(_.pick(messageAttributes, 'body', 'userId', 'roomId'), {
       submitted: new Date().getTime(),
-      author: user.username,
+      author: user.profile.nickname,
       userId: user._id
     })
 
