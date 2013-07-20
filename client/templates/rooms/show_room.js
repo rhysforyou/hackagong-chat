@@ -8,7 +8,7 @@ Template.showRoom.helpers({
 })
 
 Template.showRoom.events({
-  'submit form': function(event) {
+  'submit form#new-message': function(event) {
     event.preventDefault()
 
     var body = $(event.target).find("textarea").val()
@@ -22,5 +22,17 @@ Template.showRoom.events({
     })
 
     $(event.target).find("textarea").val('')
+  },
+  'submit form#anon-user': function(event) {
+    event.preventDefault()
+    var nickname = $(event.target).find("#name").val()
+
+    Meteor.call('anonymousUser', nickname, Session.get('currentRoomId'), function(error, response) {
+      Meteor.loginWithPassword(response.username, response.password, function(error) { console.log(error) })
+    })
   }
 })
+
+Template.showRoom.rendered = function() {
+
+}

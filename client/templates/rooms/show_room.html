@@ -1,12 +1,20 @@
 <template name="showRoom">
-  <h1>Welcome to the room</h1>
+  {{#if currentUser}}
+    <h1>Welcome to the room</h1>
 
-  {{#each messages}}
-    <p>{{body}}</p>
-  {{/each}}
+    {{#each messages}}
+      <p>{{body}}</p>
+    {{/each}}
 
-  <form>
-    <textarea></textarea>
-    <button type="submit">Post</button>
-  </form>
+    <form id="new-message">
+      <textarea></textarea>
+      <button type="submit">Post</button>
+    </form>
+  {{else}}
+    <p>Before we start we'll need your name:</p>
+    <form id="anon-user">
+      <input id="name" name="name" type="text">
+      <button type="submit">Start Chatting</button>
+    </form>
+  {{/if}}
 </template>
