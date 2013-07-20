@@ -107,9 +107,10 @@ article.message {
       border-radius: 5px;
       resize: none;
       width: auto;
-      height: $line-height * 2;
+      height: $line-height * 2.5;
       font-size: $font-size;
-      width: 600px;
+      width: 629px;
+      padding: 5px;
     }
   }
 
@@ -120,9 +121,9 @@ article.message {
 
   button {
     background: white;
-    line-height: $line-height * 2;
-    height: $line-height * 2;
-    padding: 0 20px 0 20px;
+    line-height: $line-height * 2.5;
+    height: $line-height * 2.5;
+    padding: 0 40px 0 40px;
     border-radius: 5px;
     color: white;
     font-size: 20px;
