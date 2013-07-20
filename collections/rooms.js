@@ -10,7 +10,7 @@ Meteor.methods({
   },
 
   closeRoom: function(roomId) {
-    Meteor.users.remove({roomId: roomId, anonymous: true})
+    Meteor.users.remove({"profile.roomId": roomId, "profile.anonymous": true})
     Messages.remove({roomId: roomId})
     Rooms.remove(roomId)
   }
