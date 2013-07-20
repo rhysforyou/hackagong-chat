@@ -26,6 +26,11 @@ Template.showRoom.created = function() {
       if (fields.submitted > now) {
         $("html, body").animate({ scrollTop: $(document).height() }, "slow")
       }
+
+      if (fields.submitted > now && fields.userId !== Meteor.userId()) {
+        var notification = window.webkitNotifications.createNotification('', fields.author, fields.body)
+        notification.show()
+      }
     }
   })
 }
@@ -36,4 +41,12 @@ Template.showRoom.destroyed = function() {
 
 Template.showRoom.rendered = function() {
   $("html, body").animate({ scrollTop: $(document).height() }, "slow")
+
+  if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+    // function defined in step 2
+    window.webkitNotifications.createNotification(
+        'icon.png', 'Notification Title', 'Notification content...');
+  } else {
+    window.webkitNotifications.requestPermission();
+  }
 }
