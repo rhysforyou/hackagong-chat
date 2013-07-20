@@ -91,6 +91,7 @@ article.message {
 
 .sidebar {
   @include span-columns(4);
+  @include omega;
 }
 
 #message-bar {
