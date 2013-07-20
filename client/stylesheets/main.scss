@@ -55,37 +55,26 @@ article.message {
   .avatar img {
     float: left;
     border-radius: 50%;
-    margin-top: $line-height;
   }
 
   .meta {
-    margin-left: 60px;
-    color: #666;
     margin-bottom: 5px;
+    color: #999;
     font-size: 14px;
+    line-height: 16px;
   }
 
-  .body {
+  .bubble {
     -webkit-border-radius: 10px;
     background: white;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08);
     padding: 10px;
-    margin-left: 50px;
+    margin: 0 60px 0 60px;
   }
 
   &.current-user {
     .avatar img {
       float: right;
-    }
-
-    .meta {
-      margin-right: 60px;
-      margin-left: 0;
-    }
-
-    .body {
-      margin-right: 60px;
-      margin-left: 0;
     }
   }
 }
