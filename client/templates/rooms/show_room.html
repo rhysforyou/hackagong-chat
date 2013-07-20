@@ -1,21 +1,25 @@
 <template name="showRoom">
-  {{#if currentUser}}
-    <section id="messages">
-      {{#each messages}}
-        {{> messageItem}}
-      {{/each}}
-    </section>
+  {{#if loggingIn}}
 
-    <aside class="sidebar">
-
-    </aside>
-
-    {{> messageCompose}}
   {{else}}
-    <p>Before we start we'll need your name:</p>
-    <form id="anon-user">
-      <input id="name" name="name" type="text">
-      <button type="submit">Start Chatting</button>
-    </form>
+    {{#if currentUser}}
+      <section id="messages">
+        {{#each messages}}
+          {{> messageItem}}
+        {{/each}}
+      </section>
+
+      <aside class="sidebar">
+
+      </aside>
+
+      {{> messageCompose}}
+    {{else}}
+      <p>Before we start we'll need your name:</p>
+      <form id="anon-user">
+        <input id="name" name="name" type="text">
+        <button type="submit">Start Chatting</button>
+      </form>
+    {{/if}}
   {{/if}}
 </template>
