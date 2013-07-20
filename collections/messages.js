@@ -18,6 +18,13 @@ Meteor.methods({
 
     message._id = Messages.insert(message)
 
+    Rooms.update(
+      { _id: messageAttributes.roomId },
+      { $set: {
+        lastUpdate: new Date().getTime()
+      }
+    })
+
     return message._id
   }
 })
