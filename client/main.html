@@ -1,11 +1,12 @@
 <head>
-  <title>Schrodinger's Chat</title>
-  
+  <title>Whispr</title>
+
   <script type="text/javascript" src="//use.typekit.net/qld7ecj.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-  {{loginButtons}}
-
-  {{renderPage}}
+  {{> header}}
+  <section id="site-content">
+    {{renderPage}}
+  </section>
 </body>

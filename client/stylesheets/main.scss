@@ -1,0 +1,113 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$accent: #16A085;
+$background: #ebf7f5;
+$line-height: 24px;
+$font-size: 17px;
+
+body {
+  padding: 0;
+  margin: 0;
+  padding-top: 70px;
+  background: $background;
+  color: #414141;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+html {
+  font-family: "freight-sans-pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+#site-head {
+  background: $accent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .container {
+    height: 50px;
+    @include outer-container;
+  }
+
+  .brand {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    font-size: 32px;
+    line-height: 50px;
+  }
+}
+
+#site-content {
+  @include outer-container;
+}
+
+#messages {
+  @include span-columns(8);
+}
+
+article.message {
+  padding: 10px;
+  background: white;
+  margin-bottom: 20px;
+  -webkit-border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08);
+
+  .author {
+    display: block;
+  }
+}
+
+.sidebar {
+  @include span-columns(4);
+}
+
+#message-bar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: $accent;
+
+  .container {
+    @include outer-container;
+  }
+
+  form {
+    @include span-columns(8);
+
+    textarea {
+      display: inline-block;
+      background: white;
+      border: none;
+      border-radius: 10px;
+      resize: none;
+      width: auto;
+      height: $line-height * 2;
+      font-size: $font-size;
+      width: 600px;
+    }
+  }
+
+  button {
+    display: inline-block;
+    float: right;
+  }
+
+  button {
+    background: white;
+    line-height: $line-height * 2;
+    height: $line-height * 2;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    border: none;
+    background: #414141;
+  }
+}

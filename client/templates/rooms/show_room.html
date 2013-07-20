@@ -1,15 +1,30 @@
 <template name="showRoom">
   {{#if currentUser}}
-    <h1>Welcome to the room</h1>
+    <section id="messages">
+      {{#each messages}}
+        <article class="message">
+          <header class="meta">
+            <span class="author">{{author}}</span>
+          </header>
+          <section class="body">
+            {{body}}
+          </section>
+        </article>
+      {{/each}}
+    </section>
 
-    {{#each messages}}
-      <p>{{body}}</p>
-    {{/each}}
+    <aside class="sidebar">
 
-    <form id="new-message">
-      <textarea></textarea>
-      <button type="submit">Post</button>
-    </form>
+    </aside>
+
+    <footer id="message-bar">
+      <div class="container">
+        <form id="new-message">
+          <textarea></textarea>
+          <button type="submit">Post</button>
+        </form>
+      </div>
+    </footer>
   {{else}}
     <p>Before we start we'll need your name:</p>
     <form id="anon-user">
