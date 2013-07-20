@@ -1,12 +1,16 @@
 <template name="messageItem">
   <article class="message {{ownClass}}">
-    <aside class="avatar">
-      <img src="http://placekitten.com/40/40">
-    </aside>
+    {{#if initialMessage}}
+      <aside class="avatar">
+        <img src="http://placekitten.com/40/40">
+      </aside>
+    {{/if}}
     <div class="bubble">
-      <header class="meta">
-        <span class="author">{{author}}</span>
-      </header>
+      {{#if initialMessage}}
+        <header class="meta">
+          <span class="author">{{author}}</span>
+        </header>
+      {{/if}}
       <section class="body">
         {{body}}
       </section>

@@ -2,8 +2,9 @@ Messages = new Meteor.Collection("messages")
 
 Meteor.methods({
   message: function(messageAttributes) {
-    var room = Rooms.find(messageAttributes.roomId)
+    var room = Rooms.findOne(messageAttributes.roomId)
     var user = Meteor.user()
+    var previousMessage = Messages.findOne({roomId: room._id}, {sort: {submitted: -1}})
 
     if (!room)
       throw new Meteor.Error(404, "Room not found")
@@ -15,6 +16,10 @@ Meteor.methods({
       author: user.profile.nickname,
       userId: user._id
     })
+
+    if (previousMessage) {
+      message.previousAuthor = previousMessage.author
+    }
 
     message._id = Messages.insert(message)
 
