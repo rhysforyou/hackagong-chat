@@ -27,6 +27,13 @@ Template.showRoom.created = function() {
         var notification = window.webkitNotifications.createNotification('', fields.author, fields.body)
         notification.show()
       }
+
+      // When a new message arrives and we're already scrolled to the bottom, scroll
+      // so the new message is visible
+      if (fields.submitted > now
+        && $('html body').scrollTop() + $(window).height() + 10 > $('html body').height()) {
+        $("html body").scrollTop($(document).height() - $(window).height())
+      }
     }
   })
 }
