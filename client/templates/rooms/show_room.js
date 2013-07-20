@@ -23,10 +23,6 @@ Template.showRoom.created = function() {
 
   this.messageObserver = Messages.find({roomId: Session.get('currentRoomId')}).observeChanges({
     added: function(id, fields) {
-      if (fields.submitted > now) {
-        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() })
-      }
-
       if (fields.submitted > now && fields.userId !== Meteor.userId()) {
         var notification = window.webkitNotifications.createNotification('', fields.author, fields.body)
         notification.show()
@@ -40,8 +36,7 @@ Template.showRoom.destroyed = function() {
 }
 
 Template.showRoom.rendered = function() {
-  $("html, body").animate({ scrollTop: $(document).height()-$(window).height() })
-
+  // Check if we have permission to show notifications, otherwise request it
   if (window.webkitNotifications.checkPermission() !== 0) {
     window.webkitNotifications.requestPermission()
   }
