@@ -1,5 +1,11 @@
 Messages = new Meteor.Collection("messages")
 
+Messages.allow({
+  update: function(userId, message) {
+    return userId === message.userId
+  }
+})
+
 Meteor.methods({
   message: function(messageAttributes) {
     var room = Rooms.findOne(messageAttributes.roomId)
