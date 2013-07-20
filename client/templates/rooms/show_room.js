@@ -17,7 +17,3 @@ Template.showRoom.events({
     })
   }
 })
-
-Template.showRoom.rendered = function() {
-
-}
