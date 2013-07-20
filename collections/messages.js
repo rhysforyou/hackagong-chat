@@ -10,6 +10,8 @@ Meteor.methods({
       throw new Meteor.Error(404, "Room not found")
     if (!user)
       throw new Meteor.Error(401, "You must be logged in to post messages")
+    if (messageAttributes.body.length === 0)
+      throw new Meteor.Error(400, "Message must have content")
 
     message = _.extend(_.pick(messageAttributes, 'body', 'userId', 'roomId'), {
       submitted: new Date().getTime(),
