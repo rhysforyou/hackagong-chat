@@ -19,10 +19,7 @@ function submitForm(event) {
     roomId: Session.get("currentRoomId")
   }
 
-  Meteor.call('message', message, function(error, response) {
-    if (!error)
-      $("html, body").animate({ scrollTop: $(document).height() }, "slow");
-  })
-
+  Meteor.call('message', message)
+  
   $("form#new-message textarea").val('')
 }

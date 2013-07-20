@@ -13,3 +13,7 @@ Template.messageItem.helpers({
     return this.author !== this.previousAuthor
   }
 })
+
+Template.messageItem.rendered = function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow")
+}
