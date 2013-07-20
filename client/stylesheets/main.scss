@@ -78,6 +78,15 @@ article.message {
       float: right;
     }
   }
+
+  .body p:first-child {
+    margin: 0;
+  }
+
+  p {
+    margin-top: $line-height;
+    margin-bottom: 0;
+  }
 }
 
 .sidebar {
