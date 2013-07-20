@@ -17,3 +17,23 @@ Template.showRoom.events({
     })
   }
 })
+
+Template.showRoom.created = function() {
+  var now = new Date().getTime()
+
+  this.messageObserver = Messages.find({roomId: Session.get('currentRoomId')}).observeChanges({
+    added: function(id, fields) {
+      if (fields.submitted > now) {
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow")
+      }
+    }
+  })
+}
+
+Template.showRoom.destroyed = function() {
+  this.messageObserver.stop()
+}
+
+Template.showRoom.rendered = function() {
+  $("html, body").animate({ scrollTop: $(document).height() }, "slow")
+}

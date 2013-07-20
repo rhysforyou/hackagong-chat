@@ -14,6 +14,3 @@ Template.messageItem.helpers({
   }
 })
 
-Template.messageItem.rendered = function() {
-  $("html, body").animate({ scrollTop: $(document).height() }, "slow")
-}
