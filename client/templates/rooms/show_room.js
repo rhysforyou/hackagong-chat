@@ -24,7 +24,7 @@ Template.showRoom.created = function() {
   this.messageObserver = Messages.find({roomId: Session.get('currentRoomId')}).observeChanges({
     added: function(id, fields) {
       if (fields.submitted > now) {
-        $("html, body").animate({ scrollTop: $(document).height() }, "slow")
+        $("html, body").animate({ scrollTop: $(document).height()-$(window).height() })
       }
 
       if (fields.submitted > now && fields.userId !== Meteor.userId()) {
@@ -40,13 +40,9 @@ Template.showRoom.destroyed = function() {
 }
 
 Template.showRoom.rendered = function() {
-  $("html, body").animate({ scrollTop: $(document).height() }, "slow")
+  $("html, body").animate({ scrollTop: $(document).height()-$(window).height() })
 
-  if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
-    // function defined in step 2
-    window.webkitNotifications.createNotification(
-        'icon.png', 'Notification Title', 'Notification content...');
-  } else {
-    window.webkitNotifications.requestPermission();
+  if (window.webkitNotifications.checkPermission() !== 0) {
+    window.webkitNotifications.requestPermission()
   }
 }
