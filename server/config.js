@@ -6,6 +6,7 @@ if (process.env.MAILGUN_SMTP_SERVER) {
   var smtpPassword = process.env.MAILGUN_SMTP_PASSWORD
 
   process.env.MAIL_URL = "smtp://" + smtpUsername + ":" + smtpPassword + "@" + smtpAddress + ":" + smtpPort
+  console.log("Sending emails to " + process.env.MAIL_URL)
 } else {
   console.log("Running email in development mode")
 }
