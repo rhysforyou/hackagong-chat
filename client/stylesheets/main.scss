@@ -53,9 +53,20 @@ article.message {
     display: block;
   }
 
-  .avatar img {
+  .avatar {
     float: left;
+  }
+
+
+  .default-avatar {
+    display: block;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    background-color: red;
+    background-image: url('/media/defaultAvatar.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
   }
 
   .meta {
@@ -74,7 +85,7 @@ article.message {
   }
 
   &.current-user {
-    .avatar img {
+    .avatar {
       float: right;
     }
   }

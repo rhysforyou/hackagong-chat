@@ -32,7 +32,9 @@ Template.showRoom.created = function() {
       // so the new message is visible
       if (fields.submitted > now
         && $('html body').scrollTop() + $(window).height() + 10 > $('html body').height()) {
-        $("html body").scrollTop($(document).height() - $(window).height())
+        setTimeout(function() {
+          $("html body").scrollTop($(document).height() - $(window).height())
+        }, 50)
       }
     }
   })

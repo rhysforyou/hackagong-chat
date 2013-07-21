@@ -11,6 +11,10 @@ Template.messageItem.helpers({
   // Basically whether or not the last message's author is different to this message's
   initialMessage: function() {
     return this.author !== this.previousAuthor
+  },
+
+  avatarColor: function() {
+    return Meteor.users.findOne(this.userId).profile.color
   }
 })
 

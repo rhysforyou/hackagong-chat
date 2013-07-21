@@ -1,6 +1,12 @@
 Template.roomSidebar.helpers({
   currentNickname: function() {
     return Meteor.user().profile.nickname
+  },
+  users: function() {
+    return Meteor.users.find({"profile.roomId": Session.get("currentRoomId")})
+  },
+  url: function() {
+    return document.URL
   }
 })
 
