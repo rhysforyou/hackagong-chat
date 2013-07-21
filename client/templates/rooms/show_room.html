@@ -2,22 +2,25 @@
   {{#if loggingIn}}
     {{> spinner}}
   {{else}}
-    {{#if currentUser}}
-      <section id="messages">
-        {{#each messages}}
-          {{> messageItem}}
-        {{/each}}
-      </section>
+    {{#unless currentUser}}
+      <div class="cover"></div>
+      <div class="modal" id="anonymous-signup">
+        <p>Before we start, we'll need your name:</p>
+        <form id="anon-user">
+          <input id="name" name="name" type="text">
+          <button type="submit">Start Chatting</button>
+        </form>
+      </div>
+    {{/unless}}
 
-      {{> roomSidebar}}
+    <section id="messages">
+      {{#each messages}}
+        {{> messageItem}}
+      {{/each}}
+    </section>
 
-      {{> messageCompose}}
-    {{else}}
-      <p>Before we start we'll need your name:</p>
-      <form id="anon-user">
-        <input id="name" name="name" type="text">
-        <button type="submit">Start Chatting</button>
-      </form>
-    {{/if}}
+    {{> roomSidebar}}
+
+    {{> messageCompose}}
   {{/if}}
 </template>
