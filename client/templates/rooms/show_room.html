@@ -1,19 +1,25 @@
 <template name="showRoom">
-  {{#if loggingIn}}
-    {{> spinner}}
-  {{else}}
-    {{#unless currentUser}}
-      {{> userCreateAnonymous}}
-    {{/unless}}
+  {{> header}}
+  <div id="room">
+    {{#if loggingIn}}
+      {{> spinner}}
+    {{else}}
+      {{#unless currentUser}}
+        {{> userCreateAnonymous}}
+      {{/unless}}
 
-    <section id="messages">
-      {{#each messages}}
-        {{> messageItem}}
-      {{/each}}
-    </section>
+      <section id="messages">
+        <article class="notification">
+          <span class="body">Welcome to the chat room</span>
+        </article>
+        {{#each messages}}
+          {{> messageItem}}
+        {{/each}}
+      </section>
 
-    {{> roomSidebar}}
+      {{> roomSidebar}}
 
-    {{> messageCompose}}
-  {{/if}}
+      {{> messageCompose}}
+    {{/if}}
+  </div>
 </template>
