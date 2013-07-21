@@ -14,11 +14,11 @@ body {
   font-size: $font-size;
   line-height: $line-height;
   color: #414141;
+  padding-bottom: 90px;
 }
 
 #room {
   padding-top: 70px;
-  padding-bottom: 90px;
 }
 
 html {
@@ -58,6 +58,7 @@ article.message {
 
   .author {
     display: block;
+    font-weight: bold;
   }
 
   .avatar {
