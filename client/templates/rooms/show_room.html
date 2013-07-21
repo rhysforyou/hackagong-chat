@@ -3,14 +3,7 @@
     {{> spinner}}
   {{else}}
     {{#unless currentUser}}
-      <div class="cover"></div>
-      <div class="modal" id="anonymous-signup">
-        <p>Before we start, we'll need your name:</p>
-        <form id="anon-user">
-          <input id="name" name="name" type="text">
-          <button type="submit">Start Chatting</button>
-        </form>
-      </div>
+      {{> userCreateAnonymous}}
     {{/unless}}
 
     <section id="messages">

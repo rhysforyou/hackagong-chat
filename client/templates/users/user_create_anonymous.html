@@ -1,0 +1,15 @@
+<template name="userCreateAnonymous">
+  <div class="cover"></div>
+  <div class="modal" id="anonymous-signup">
+    <form id="anon-user">
+      <p>Before we start, we'll need your name:</p>
+      <input id="name" name="name" type="text" placeholder="Nickname">
+      {{#if noUsers}}
+        <p>If we get your email, we can send you a transcript once the chat finishes</p>
+        <input id="email" name="email" type="text" placeholder="Email">
+      {{/if}}
+
+      <button type="submit">Start Chatting</button>
+    </form>
+  </div>
+</template>

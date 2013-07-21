@@ -7,17 +7,6 @@ Template.showRoom.helpers({
   }
 })
 
-Template.showRoom.events({
-  'submit form#anon-user': function(event) {
-    event.preventDefault()
-    var nickname = $(event.target).find("#name").val()
-
-    Meteor.call('anonymousUser', nickname, Session.get('currentRoomId'), function(error, response) {
-      Meteor.loginWithPassword(response.username, response.password, function(error) { console.log(error) })
-    })
-  }
-})
-
 Template.showRoom.created = function() {
   var now = new Date().getTime()
 

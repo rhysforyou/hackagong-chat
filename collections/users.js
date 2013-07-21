@@ -1,14 +1,14 @@
 // The collection is provided by Meteor.Account
 Meteor.methods({
-  anonymousUser: function(nickname, roomId) {
-    if (!nickname)
+  anonymousUser: function(attributes) {
+    if (!attributes.nickname)
       throw new Meteor.Error(400, "Needs a name")
-    if (!roomId)
+    if (!attributes.roomId)
       throw new Meteor.Error(400, "Anonymous users must belong to a room")
 
-    var username = roomId + "anon" + new Date().getTime()
+    var username = attributes.roomId + "anon" + new Date().getTime()
     var password = username
-    var colorIndex = Meteor.users.find({"profile.roomId": roomId}).count()
+    var userIndex = Meteor.users.find({"profile.roomId": attributes.roomId}).count()
 
     colors = [
       "#2ECC71",
@@ -21,13 +21,18 @@ Meteor.methods({
 
     var user = {
       profile: {
-        nickname: nickname,
+        nickname: attributes.nickname,
         anonymous: true,
-        roomId: roomId,
-        color: colors[colorIndex]
+        roomId: attributes.roomId,
+        color: colors[userIndex],
+        email: attributes.email
       },
       username: username,
       password: password
+    }
+
+    if (userIndex === 0) {
+      user.profile.admin = true
     }
 
     Accounts.createUser(user)
