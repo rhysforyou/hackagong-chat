@@ -1102,3 +1102,63 @@ img.alignleft {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+
+  #site-head .brand {
+      padding-left: 10px;
+  }
+  #site-content {
+      padding-left: 10px;
+      padding-right: 10px;
+
+  }
+
+
+}/*/mediaquery*/
+
+
+/***************** 780px down *****************/
+@media only screen and (max-width: 780px) {
+
+  body, #site-content {
+      background: #ecf7f5;
+  }
+  #messages {
+      width: auto;
+      float: none;
+  }
+
+  article.message {
+      margin-right: 0;
+  }
+  article.message img {
+      max-width: 90% !important;
+      height: auto !important;
+  }
+
+  .sidebar {
+      position: fixed;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      background: #d0ece7;
+      padding: 10px 0 20px;
+      height: 300px;
+      overflow: scroll;
+  }
+  .sidebar h3, .sidebar ul, .sidebar > input, .sidebar > form, .sidebar > a, #room-users, #room-url {
+      margin-left: 15px;;
+  }
+
+  #message-bar form textarea {
+      width: 66%;
+  }
+
+  #message-bar button {
+      width: 30%;
+  }
+
+
+
+}/*/mediaquery*/
+

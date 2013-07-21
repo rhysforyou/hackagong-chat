@@ -112,12 +112,16 @@ article.message {
   img {
       border: 5px solid #fff;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
+      margin-top: 10px;
   }
 }
 
 .sidebar {
   @include span-columns(4);
   @include omega;
+  position: fixed;
+  top: 75px;
+  left: 67%;
 }
 
 .sidebar h3 {
