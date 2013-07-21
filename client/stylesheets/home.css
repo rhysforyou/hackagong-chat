@@ -1,3 +1,4 @@
+
 .row {
   clear: both;
 }
@@ -1058,7 +1059,7 @@ img.alignleft {
     line-height: 52px;
   }
 }
-/*/mediaquery*/
+
 /***************** 820px *****************/
 @media only screen and (min-width: 840px) {
   #header {
@@ -1085,7 +1086,7 @@ img.alignleft {
     right: 10px;
   }
 }
-/*/mediaquery*/
+
 /***************** 900px *****************/
 @media only screen and (min-width: 900px) {
   #banner h3 {
@@ -1100,3 +1101,4 @@ img.alignleft {
     display: inline;
   }
 }
+
