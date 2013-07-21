@@ -207,5 +207,10 @@ article.message {
     border-radius: 5px;
     border: none;
     margin-top: $line-height;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($accent, 5);
+    }
   }
 }
