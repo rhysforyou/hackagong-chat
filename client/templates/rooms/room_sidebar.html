@@ -6,9 +6,12 @@
 
     <h3>Participants</h3>
 
-    <ul class="room-users">
+    <ul id="room-users">
       {{#each users}}
-        <li>{{profile.nickname}}</li>
+        <li class="user">
+          <span class="avatar" style="background-color: {{profile.color}}"></span>
+          <span class="name">{{profile.nickname}}</span>
+        </li>
       {{/each}}
     </ul>
 
