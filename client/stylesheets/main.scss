@@ -10,7 +10,7 @@ $font-size: 17px;
 body {
   padding: 0;
   margin: 0;
-  background: $background;
+  background: $background url(/media/bg.png) repeat-y 66.8% 0;;
   font-size: $font-size;
   line-height: $line-height;
   color: #414141;
@@ -44,6 +44,8 @@ html {
 
 #site-content {
   @include outer-container;
+  background: #ebf7f5 url(media/bg.png) repeat-y 66.8% 0;
+  padding-top: 30px;
 }
 
 #messages {
@@ -52,6 +54,7 @@ html {
 
 article.message {
   margin-bottom: 10px;
+  margin-right: 40px;
 
   .author {
     display: block;
@@ -84,8 +87,8 @@ article.message {
     -webkit-border-radius: 5px;
     background: white;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08);
-    padding: 10px;
-    margin: 0 60px 0 60px;
+    padding: 10px 15px;
+    margin: 0 50px 15px 50px;
   }
 
   &.current-user {
@@ -101,6 +104,14 @@ article.message {
   p {
     margin-top: $line-height;
     margin-bottom: 0;
+    color: #666;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  img {
+      border: 5px solid #fff;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -108,6 +119,74 @@ article.message {
   @include span-columns(4);
   @include omega;
 }
+
+.sidebar h3 {
+    margin: 0;
+    color: #13a085;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+#room-url {
+    margin: 0 0 30px 0;
+    padding: 5px 0 5px 10px;
+    font-size: 11px;
+    color: #666;
+    width: 80%;
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#room-users {
+    margin: 0 0 30px 0; list-style: none;
+    padding: 0;;
+}
+#room-users li {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #414141;
+}
+
+#change-nickname {
+    margin-bottom: 30px;
+}
+#change-nickname legend {
+    font-size: 11px; color: #666666;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    line-height: 13px;
+}
+
+#nickname {
+    padding: 3px 2px;
+    color: #666;
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#close-room {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #13a085;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 5px;
+    -webkit-transition: background .4s ease;
+
+    }
+
+#close-room:hover {
+    bckground:#414141;
+}
+
 
 #message-bar {
   padding-top: 10px;
@@ -135,7 +214,10 @@ article.message {
       height: $line-height * 2.5;
       font-size: $font-size;
       width: 629px;
-      padding: 5px;
+      padding: 10px;
+      font-size: 15px;
+      line-height: 20px;
+      color: #666;
     }
   }
 
@@ -222,13 +304,16 @@ article.message {
 #room-users {
   .user .avatar {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: red;
     background-image: url('/media/defaultAvatar.png');
     background-repeat: no-repeat;
+    background-size: 50%;
     background-position: bottom center;
+    float: left;
+    margin-right: 6px;
   }
 }
 

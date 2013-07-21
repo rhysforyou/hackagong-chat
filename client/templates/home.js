@@ -6,3 +6,7 @@ Template.home.events({
     })
   }
 })
+
+Template.home.created = function() {
+  
+}
