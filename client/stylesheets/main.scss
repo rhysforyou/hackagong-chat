@@ -13,7 +13,6 @@ body {
   font-size: $font-size;
   line-height: $line-height;
   color: #414141;
-  padding-bottom: 90px;
 }
 
 #room {
@@ -38,6 +37,18 @@ html {
 
   .brand svg {
     margin-top: 7px;
+  }
+
+  .tagline {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0.7;
+    color: white;
+    line-height: 50px;
+    position: relative;
+    top: -9px;
   }
 }
 
@@ -168,8 +179,8 @@ article.message {
     padding: 3px 2px;
     color: #666;
     border: 1px solid #ccc;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border-radius: 5px;
     border-radius: 5px;
     font-size: 16px;
 }
