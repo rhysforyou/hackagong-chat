@@ -1093,6 +1093,9 @@ img.alignleft {
     right: 50%;
     margin-right: -400px;
   }
+  #new-message button {
+    display: inline-block;
+  }
   #banner a {
     right: 50%;
     margin-right: -460px;
