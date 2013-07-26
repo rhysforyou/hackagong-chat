@@ -1,10 +1,10 @@
 # Whispr
 
 This repo hosts the source code for _Whispr_, a side project built by
-[@rpowelll][rpowelll] and [@jordesign][jordesign] for [Hackagong
+[@rhyspowelll][rhyspowelll] and [@jordesign][jordesign] for [Hackagong
 2013][hackagong].
 
-[rpowelll]: http://twitter.com/rpowelll
+[rhyspowelll]: http://twitter.com/rhyspowelll
 [jordesign]: http://twitter.com/jordesign
 [hackagong]: http://hackagong.com
 
